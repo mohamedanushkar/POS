@@ -1,0 +1,15 @@
+G:\TOPUP\AD Topup\ADPOS\ADPOS\bin\Debug\ADPOS.exe.config
+G:\TOPUP\AD Topup\ADPOS\ADPOS\bin\Debug\ADPOS.exe
+G:\TOPUP\AD Topup\ADPOS\ADPOS\bin\Debug\ADPOS.pdb
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.csprojAssemblyReference.cache
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.frm_Admin.resources
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.Properties.Resources.resources
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.csproj.GenerateResource.cache
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.exe
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.pdb
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.Login.resources
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.frm_Cashier.resources
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.UC_Admin.resources
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.UC_Inventory.resources
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.UC_Manage_Users.resources
+G:\TOPUP\AD Topup\ADPOS\ADPOS\obj\Debug\ADPOS.UC_Supplier.resources
