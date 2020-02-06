@@ -33,14 +33,14 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.txtProductBarcode = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmdUserCategory = new System.Windows.Forms.ComboBox();
+            this.cmbProductCategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,14 +65,14 @@
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.txtQuantity);
-            this.groupBox1.Controls.Add(this.txtProductID);
+            this.groupBox1.Controls.Add(this.txtProductBarcode);
             this.groupBox1.Controls.Add(this.txtProductName);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.txtUnitPrice);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cmdUserCategory);
+            this.groupBox1.Controls.Add(this.cmbProductCategory);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
@@ -94,6 +94,7 @@
             this.btnUpdate.TabIndex = 40;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -120,12 +121,12 @@
             this.txtQuantity.Size = new System.Drawing.Size(270, 20);
             this.txtQuantity.TabIndex = 21;
             // 
-            // txtProductID
+            // txtProductBarcode
             // 
-            this.txtProductID.Location = new System.Drawing.Point(131, 33);
-            this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(270, 20);
-            this.txtProductID.TabIndex = 20;
+            this.txtProductBarcode.Location = new System.Drawing.Point(131, 33);
+            this.txtProductBarcode.Name = "txtProductBarcode";
+            this.txtProductBarcode.Size = new System.Drawing.Size(270, 20);
+            this.txtProductBarcode.TabIndex = 20;
             // 
             // txtProductName
             // 
@@ -173,13 +174,13 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "Unit Price";
             // 
-            // cmdUserCategory
+            // cmbProductCategory
             // 
-            this.cmdUserCategory.FormattingEnabled = true;
-            this.cmdUserCategory.Location = new System.Drawing.Point(626, 85);
-            this.cmdUserCategory.Name = "cmdUserCategory";
-            this.cmdUserCategory.Size = new System.Drawing.Size(270, 21);
-            this.cmdUserCategory.TabIndex = 26;
+            this.cmbProductCategory.FormattingEnabled = true;
+            this.cmbProductCategory.Location = new System.Drawing.Point(626, 85);
+            this.cmbProductCategory.Name = "cmbProductCategory";
+            this.cmbProductCategory.Size = new System.Drawing.Size(270, 21);
+            this.cmbProductCategory.TabIndex = 26;
             // 
             // label5
             // 
@@ -195,9 +196,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(23, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Product ID";
+            this.label1.Text = "Barcode";
             // 
             // label4
             // 
@@ -306,14 +307,14 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.TextBox txtProductBarcode;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmdUserCategory;
+        private System.Windows.Forms.ComboBox cmbProductCategory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
