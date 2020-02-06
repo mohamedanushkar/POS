@@ -31,5 +31,14 @@ namespace ADPOS
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void frm_Admin_Load(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Admin());
+        }
     }
 }
