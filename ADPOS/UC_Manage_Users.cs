@@ -15,6 +15,8 @@ namespace ADPOS
 {
     public partial class UC_Manage_Users : UserControl
     {
+        public static string cs = ConfigurationManager.ConnectionStrings["dbcon"].ToString();
+
 
         public UC_Manage_Users()
         {
@@ -27,7 +29,6 @@ namespace ADPOS
 
         public class User
         {
-        
             public int ID { get; set; }
             public string Name { get; set; }
             public string Address { get; set; }
@@ -40,7 +41,7 @@ namespace ADPOS
             public void SaveUser(User usr)
             {
 
-                using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+                using (MySqlConnection con = new MySqlConnection(cs))
                 {
                     string sql = "INSERT INTO `tbl_user`(`User_ID`, `Name`, `Address`, `Phone`, `Gender`, `Mail`, `User_Name`, `Password`, `User_Category_ID`) VALUES ('"+ usr .ID+ "','"+ usr .Name+ "','"+ usr.Address+ "','"+ usr.Phone+ "','"+usr.Gender+"','"+usr.Mail+"','"+usr.UserName+"','"+usr.Password+"','"+usr.User_Category_ID+"');";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -55,7 +56,7 @@ namespace ADPOS
                 var confirmResult = MessageBox.Show("Are you sure to delete this record ??", "Confirm Delete!!", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+                    using (MySqlConnection con = new MySqlConnection(cs))
                     {
                         string sql = "DELETE FROM `tbl_user` where User_ID=" + usr.ID;
                         con.Open();
@@ -66,7 +67,7 @@ namespace ADPOS
             }
             public void UpdateUser(User usr)
             {
-                using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+                using (MySqlConnection con = new MySqlConnection(cs))
                 {
                     string sql = "UPDATE `tbl_user` SET `Name`='"+usr.Name+"',`Address`='"+usr.Address+"',`Phone`='"+usr.Phone+"',`Gender`='"+usr.Gender+"',`Mail`='"+usr.Mail+"',`User_Name`='"+usr.UserName+"',`Password`='"+usr.Password+"',`User_Category_ID`='"+usr.User_Category_ID+"' WHERE `User_ID`='"+usr.ID+"';";
 
@@ -81,7 +82,7 @@ namespace ADPOS
         }
         private void DatabindtoGridView()
         {
-            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+            using (MySqlConnection con = new MySqlConnection(cs))
             {
                 string sql = "SELECT * FROM `tbl_user` INNER JOIN tbl_user_category ON tbl_user.User_Category_ID = tbl_user_category.User_Category_ID";
                 MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
@@ -174,7 +175,7 @@ namespace ADPOS
 
         {
 
-            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+            using (MySqlConnection con = new MySqlConnection(cs))
             {
 
                 string sql = "SELECT * FROM `tbl_user_category`";
@@ -260,7 +261,5 @@ namespace ADPOS
                 DatabindtoGridView();
             }
         }
-
-      
     }
 }

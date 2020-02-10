@@ -35,7 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.panelLoad = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -105,7 +105,6 @@
             this.button6.Size = new System.Drawing.Size(35, 35);
             this.button6.TabIndex = 3;
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -119,13 +118,13 @@
             this.button7.TabIndex = 4;
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // panelLoad
+            // panel3
             // 
-            this.panelLoad.BackColor = System.Drawing.Color.Transparent;
-            this.panelLoad.Location = new System.Drawing.Point(247, 44);
-            this.panelLoad.Name = "panelLoad";
-            this.panelLoad.Size = new System.Drawing.Size(949, 538);
-            this.panelLoad.TabIndex = 5;
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel3.Location = new System.Drawing.Point(247, 44);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(949, 538);
+            this.panel3.TabIndex = 5;
             // 
             // frm_Cashier
             // 
@@ -133,7 +132,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 586);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelLoad);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Cashier";
@@ -153,6 +152,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panelLoad;
+        private System.Windows.Forms.Panel panel3;
     }
 }

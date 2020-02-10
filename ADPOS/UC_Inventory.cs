@@ -14,7 +14,7 @@ namespace ADPOS
 {
     public partial class UC_Inventory : UserControl
     {
-        public UC_Inventory()
+        public static string cs = ConfigurationManager.ConnectionStrings["dbcon"].ToString(); public UC_Inventory()
         {
             InitializeComponent();
             DataBindToCombobox();
@@ -33,7 +33,7 @@ namespace ADPOS
             public void SaveEmp(Product emp)
             {
 
-                using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+                using (MySqlConnection con = new MySqlConnection(cs))
                 {
                     string sql = "INSERT INTO `tbl_product`(`Product_ID`, `Name`, `Description`, `Price`, `Unit_Price`, `Product_Category_ID`)  values ('" + emp.ID + "','" + emp.Name + "','" + emp.Description + "','" + emp.Price + "','" + emp.Unit_Price + "','" + emp.Prodict_Category + "');";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -48,7 +48,7 @@ namespace ADPOS
                 var confirmResult = MessageBox.Show("Are you sure to delete this record ??","Confirm Delete!!",MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+                    using (MySqlConnection con = new MySqlConnection(cs))
                     {
                         string sql = "delete from tbl_product where Product_ID=" + prdt.ID;
                         con.Open();
@@ -59,7 +59,7 @@ namespace ADPOS
             }
             public void UpdateProduct(Product prdt)
             {
-                using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+                using (MySqlConnection con = new MySqlConnection(cs))
                 {
                     string sql = "UPDATE `tbl_product` SET `Name`='"+prdt.Name+"',`Description`='"+prdt.Description+"',`Price`='"+prdt.Price+"',`Unit_Price`='"+prdt.Unit_Price+"' WHERE  `Product_ID`='"+prdt.ID+"'";
 
@@ -74,7 +74,7 @@ namespace ADPOS
         }
         private void DatabindtoGridView()
         {
-            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+            using (MySqlConnection con = new MySqlConnection(cs))
             {
                 string sql = "SELECT * FROM tbl_product AS a INNER JOIN tbl_product_category AS b ON a.Product_Category_ID = b.Product_Category_ID";
                 MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
@@ -147,7 +147,7 @@ namespace ADPOS
 
         {
 
-            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+            using (MySqlConnection con = new MySqlConnection(cs))
             {
 
                 string sql = "select * from tbl_product_category";

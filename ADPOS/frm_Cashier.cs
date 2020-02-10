@@ -19,16 +19,7 @@ namespace ADPOS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in panelLoad.Controls)
-            {
-                ctrl.Dispose();
-            }
-            panelLoad.Controls.Add(new UC_Invoice());
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+           
         }
     }
 }
