@@ -189,9 +189,7 @@ namespace ADPOS
                 txtProductName.Text = row.Cells["Name"].Value.ToString();
                 txtDescription.Text = row.Cells["Description"].Value.ToString();
                 txtPrice.Text = row.Cells["Price"].Value.ToString();
-                txtUnitPrice.Text = row.Cells["Unit_Price"].Value.ToString();
-                cmdProductCategory.Text = row.Cells["Category_Name"].Value.ToString();
-                cmdProductCategory.Enabled = false;
+                txtUnitPrice.Text = row.Cells["Unit_Price"].Value.ToString();               
                 txtProductID.Enabled = false;
                     }
         }

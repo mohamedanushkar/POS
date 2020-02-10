@@ -81,6 +81,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "Supplier";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -108,6 +109,7 @@
             this.button8.TabIndex = 8;
             this.button8.Text = "Manage Users";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // btnHome
             // 
