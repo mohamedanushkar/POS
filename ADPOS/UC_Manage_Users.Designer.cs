@@ -38,8 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbGender = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lable = new System.Windows.Forms.Label();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,15 +47,13 @@
             this.txtConformPassword = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.DataGrid_user_list = new System.Windows.Forms.DataGridView();
-            this.DataGrid_User_search = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_user_list)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_User_search)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,25 +134,25 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Phone";
             // 
+            // lable
+            // 
+            this.lable.AutoSize = true;
+            this.lable.Location = new System.Drawing.Point(559, 54);
+            this.lable.Name = "lable";
+            this.lable.Size = new System.Drawing.Size(42, 13);
+            this.lable.TabIndex = 12;
+            this.lable.Text = "Gender";
+            // 
             // cmbGender
             // 
-            this.cmbGender.AutoSize = true;
-            this.cmbGender.Location = new System.Drawing.Point(559, 54);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(42, 13);
-            this.cmbGender.TabIndex = 12;
-            this.cmbGender.Text = "Gender";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox2.Location = new System.Drawing.Point(667, 45);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(270, 21);
-            this.comboBox2.TabIndex = 13;
+            this.cmbGender.Location = new System.Drawing.Point(667, 45);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(270, 21);
+            this.cmbGender.TabIndex = 13;
             // 
             // label4
             // 
@@ -210,23 +208,20 @@
             // 
             // DataGrid_user_list
             // 
+            this.DataGrid_user_list.AllowUserToAddRows = false;
+            this.DataGrid_user_list.AllowUserToDeleteRows = false;
             this.DataGrid_user_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid_user_list.Location = new System.Drawing.Point(3, 202);
             this.DataGrid_user_list.Name = "DataGrid_user_list";
-            this.DataGrid_user_list.Size = new System.Drawing.Size(467, 333);
+            this.DataGrid_user_list.ReadOnly = true;
+            this.DataGrid_user_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGrid_user_list.Size = new System.Drawing.Size(943, 333);
             this.DataGrid_user_list.TabIndex = 20;
-            // 
-            // DataGrid_User_search
-            // 
-            this.DataGrid_User_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_User_search.Location = new System.Drawing.Point(476, 202);
-            this.DataGrid_User_search.Name = "DataGrid_User_search";
-            this.DataGrid_User_search.Size = new System.Drawing.Size(470, 333);
-            this.DataGrid_User_search.TabIndex = 21;
+            this.DataGrid_user_list.SelectionChanged += new System.EventHandler(this.DataGrid_user_list_SelectionChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.btnNew);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.btnDelete);
@@ -246,9 +241,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cmbGender);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lable);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(943, 193);
@@ -256,14 +251,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Management";
             // 
-            // btnSearch
+            // btnNew
             // 
-            this.btnSearch.Location = new System.Drawing.Point(619, 164);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 24;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnNew.Location = new System.Drawing.Point(619, 164);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 24;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // label9
             // 
@@ -282,6 +278,7 @@
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -291,6 +288,7 @@
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -300,18 +298,17 @@
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // UC_Manage_Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.DataGrid_User_search);
             this.Controls.Add(this.DataGrid_user_list);
             this.Name = "UC_Manage_Users";
             this.Size = new System.Drawing.Size(949, 538);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_user_list)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_User_search)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -330,8 +327,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label cmbGender;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label lable;
+        private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -339,12 +336,11 @@
         private System.Windows.Forms.TextBox txtConformPassword;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView DataGrid_user_list;
-        private System.Windows.Forms.DataGridView DataGrid_User_search;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label label9;
     }
 }

@@ -49,5 +49,19 @@ namespace ADPOS
             }
             panelLoad.Controls.Add(new UC_Inventory());
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Manage_Users());
+        }
     }
 }
