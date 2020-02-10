@@ -16,7 +16,7 @@ namespace ADPOS
 {
     public partial class Login : Form
     {
-       
+        string cs = ConfigurationManager.ConnectionStrings["dbcon"].ToString();
         public Login()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace ADPOS
 
         private  int returnRows(string UserName, string Password)
         {
-            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+            using (MySqlConnection con = new MySqlConnection(cs))
             {
                 string sql = "SELECT COUNT(*) AS cnt FROM tbl_user WHERE tbl_user.User_Name = '" + UserName + "' AND tbl_user.Password = '" + Password + "';";
                 MySqlCommand cmd = new  MySqlCommand(sql, con);
@@ -35,29 +35,16 @@ namespace ADPOS
                 return Count;                
             }
         }
-        private int ReturnID(string UserName, string Password)
-        {
-            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
-            {
-                string sql = "SELECT `User_ID` AS ID FROM tbl_user WHERE tbl_user.User_Name = '" + UserName + "' AND tbl_user.Password = '" + Password + "';";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                con.Open();
-                MySqlDataReader dr = cmd.ExecuteReader();
-                dr.Read();
-                int Count = Convert.ToInt32(dr["ID"]);
-                return Count;
-            }
-        }
+
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-           
             var login = new LoginUser()
             {
                 Uname = txtUserName.Text,
                 Pswd=txtPassword.Text
             };
+            
 
-            LoginUser.IDGlobal = ReturnID(login.Uname, login.Pswd);
             int count = returnRows(login.Uname, login.Pswd);
 
             if (count == 1)

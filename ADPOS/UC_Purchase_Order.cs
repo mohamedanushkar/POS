@@ -12,11 +12,9 @@ namespace ADPOS
 {
     public partial class UC_Purchase_Order : UserControl
     {
-        
         public UC_Purchase_Order()
         {
             InitializeComponent();
-            
         }
     }
 }

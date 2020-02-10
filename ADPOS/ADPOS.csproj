@@ -35,14 +35,11 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Forms.DataVisualization.Design" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,7 +49,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs">
@@ -66,12 +62,6 @@
     </Compile>
     <Compile Include="frm_Cashier.Designer.cs">
       <DependentUpon>frm_Cashier.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_Invoice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Invoice.Designer.cs">
-      <DependentUpon>UC_Invoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -129,9 +119,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Cashier.resx">
       <DependentUpon>frm_Cashier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Invoice.resx">
-      <DependentUpon>UC_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
