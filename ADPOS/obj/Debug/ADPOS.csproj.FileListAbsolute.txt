@@ -62,3 +62,4 @@ C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.csproj.GenerateResourc
 C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.csproj.CopyComplete
 C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.exe
 C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.pdb
+C:\Users\Anush\Desktop\pos\ADPOS\obj\Debug\ADPOS.UC_Invoice.resources
