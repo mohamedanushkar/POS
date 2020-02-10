@@ -62,3 +62,29 @@ C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.csproj.GenerateResourc
 C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.csproj.CopyComplete
 C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.exe
 C:\Users\dumic\OneDrive\Desktop\POS\ADPOS\obj\Debug\ADPOS.pdb
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.csprojAssemblyReference.cache
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.frm_Admin.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.frm_Cashier.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.Login.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.Properties.Resources.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Admin.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Inventory.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Manage_Users.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Purchase_Order.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Search_Products.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Stock.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Supplier.resources
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.csproj.GenerateResource.cache
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.exe
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.pdb
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\ADPOS.exe.config
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\ADPOS.exe
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\ADPOS.pdb
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\MySql.Data.dll
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\Google.Protobuf.dll
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\BouncyCastle.Crypto.dll
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\Ubiety.Dns.Core.dll
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\Renci.SshNet.dll
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\MySql.Data.xml
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.csproj.CopyComplete
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Invoice.resources
