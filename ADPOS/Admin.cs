@@ -8,10 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace ADPOS
 {
+  
     public partial class frm_Admin : Form
     {
+       
+        
         public frm_Admin()
         {
             InitializeComponent();
@@ -34,6 +39,8 @@ namespace ADPOS
 
         private void frm_Admin_Load(object sender, EventArgs e)
         {
+            
+
             foreach (Control ctrl in panelLoad.Controls)
             {
                 ctrl.Dispose();
