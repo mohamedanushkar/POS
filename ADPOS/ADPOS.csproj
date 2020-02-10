@@ -63,6 +63,12 @@
     <Compile Include="frm_Cashier.Designer.cs">
       <DependentUpon>frm_Cashier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoice_WH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice_WH.Designer.cs">
+      <DependentUpon>Invoice_WH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Cashier.resx">
       <DependentUpon>frm_Cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice_WH.resx">
+      <DependentUpon>Invoice_WH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
