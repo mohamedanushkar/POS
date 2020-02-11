@@ -100,7 +100,19 @@ namespace ADPOS
             return true;
         }
 
-      
-     
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

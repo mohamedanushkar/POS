@@ -262,5 +262,11 @@ namespace ADPOS
         {
             calculate();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            INvoice_Retail frm = new INvoice_Retail(Convert.ToInt32(txtID.Text));
+            frm.Show();
+        }
     }
 }
