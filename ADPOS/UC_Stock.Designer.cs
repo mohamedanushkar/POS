@@ -65,7 +65,6 @@
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Clear
             // 
@@ -75,7 +74,6 @@
             this.btn_Clear.TabIndex = 7;
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // Btn_Update
             // 
@@ -85,7 +83,6 @@
             this.Btn_Update.TabIndex = 6;
             this.Btn_Update.Text = "Update";
             this.Btn_Update.UseVisualStyleBackColor = true;
-            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click);
             // 
             // txt_product_ID
             // 
