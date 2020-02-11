@@ -47,12 +47,16 @@ namespace ADPOS
             {
                 ctrl.Dispose();
             }
-            panelLoad.Controls.Add(new UC_Inventory());
+            panelLoad.Controls.Add(new UC_Stock());
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Supplier());
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -62,6 +66,51 @@ namespace ADPOS
                 ctrl.Dispose();
             }
             panelLoad.Controls.Add(new UC_Manage_Users());
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Admin());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Inventory());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Stock());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Purchase_Order());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panelLoad.Controls)
+            {
+                ctrl.Dispose();
+            }
+            panelLoad.Controls.Add(new UC_Search_Products());
         }
     }
 }
