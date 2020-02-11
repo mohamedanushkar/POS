@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using Microsoft.VisualBasic;
 
 namespace ADPOS
 {
@@ -18,29 +19,17 @@ namespace ADPOS
         public UC_Purchase_Order()
         {
             InitializeComponent();
+            DataBindToSupplier();
+            DataBindToCombobox();
         }
+        List<Inv_transactions> invlist = new List<Inv_transactions>();
 
         public class InvoiceAdd
         {
-            public int Product_ID { get; set; }
             public int Quantity { get; set; }
-            public int Price { get; set; }
-            public int SupplierID { get; set; }
+            public int Price { get; set; }          
 
 
-
-            public void Update(InvoiceAdd prdt)
-            {
-
-                using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
-                {
-                    string sql = "UPDATE `tbl_stock` SET `Quantity`= Quantity-'" + prdt.Quantity + "' WHERE `Product_ID`=" + prdt.Product_ID;
-                    con.Open();
-                    MySqlCommand cmd = new MySqlCommand(sql, con);
-                    cmd.ExecuteNonQuery();
-
-                }
-            }
 
         }
 
@@ -53,6 +42,8 @@ namespace ADPOS
             public DateTime Time { get; set; }
 
             public int UserID { get; set; }
+
+            public int Supplier_ID { get; set; }
         }
 
         private void calculate()
@@ -90,6 +81,27 @@ namespace ADPOS
 
 
         }
+        private void DataBindToSupplier()
+
+        {
+
+            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+            {
+
+                string sql = "SELECT * FROM `tbl_Supplier`";
+                MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                cmb_Supplier.DisplayMember = "Supplier_Name";
+                cmb_Supplier.ValueMember = "Supplier_ID";
+                cmb_Supplier.DataSource = ds.Tables[0];
+
+            }
+
+
+        }
+
         public void geProductDetails(string inv)
         {
             InvoiceAdd invadd = new InvoiceAdd();
@@ -124,7 +136,7 @@ namespace ADPOS
         {
             using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
             {
-                string sql = "INSERT INTO `tbl_invoice_master_retail`( `Date`, `Time`, `User_ID`) VALUES ('" + inv.InvDate + "','" + inv.Time + "','" + inv.UserID + "')";
+                string sql = "INSERT INTO `tbl_purchase_order`(`User_ID`, `Supplier_ID`, `Date`) VALUES ('"+inv.UserID+"','"+inv.Supplier_ID+"','"+inv.InvDate+"')";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -141,12 +153,12 @@ namespace ADPOS
 
         public int CreateInvTransList()
         {
-            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            for (int i = 0; i < DataGrid_temp_Purchase_order.Rows.Count; ++i)
             {
                 Inv_transactions invTr = new Inv_transactions();
-                invTr.ProductID = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-                invTr.Quantity = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value);
-                invTr.Total = Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
+                invTr.ProductID = Convert.ToInt32(DataGrid_temp_Purchase_order.Rows[i].Cells[0].Value);
+                invTr.Quantity = Convert.ToDecimal(DataGrid_temp_Purchase_order.Rows[i].Cells[3].Value);
+                invTr.Total = Convert.ToDecimal(DataGrid_temp_Purchase_order.Rows[i].Cells[4].Value);
                 invlist.Add(invTr);
             }
 
@@ -157,7 +169,7 @@ namespace ADPOS
         {
             using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
             {
-                string sql = "SELECT MAX(Invoice_ID) as InvNo FROM `tbl_invoice_master_retail`";
+                string sql = "SELECT MAX(Purchase_Order_ID) as InvNo FROM `tbl_purchase_order`";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 con.Open();
                 MySqlDataReader dr = cmd.ExecuteReader();
@@ -177,7 +189,7 @@ namespace ADPOS
                 using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
                 {
 
-                    String sql = "INSERT INTO `tbl_invoice_transactions_retail`(`Invoice_ID`, `Product_ID`, `Quantity`, `Total`) VALUES ('" + InvNo + "','" + inv.ProductID + "','" + inv.Quantity + "','" + inv.Total + "')";
+                    String sql = "INSERT INTO  `tbl_purchase_order_trans`(`Purchase_Order_ID`, `Product_ID`, `Quantity`, `Total`)  VALUES ('" + InvNo + "','" + inv.ProductID + "','" + inv.Quantity + "','" + inv.Total + "');";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     con.Open();
@@ -195,58 +207,12 @@ namespace ADPOS
 
 
 
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            LoginUser.IDGlobal = 2;
-
-            inv_master_Retail invm = new inv_master_Retail();
-            invm.InvDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            invm.Time = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
-            invm.UserID = LoginUser.IDGlobal;
-
-            SaveMasterRec(invm);
-            int InvNo = CreateInvTransList();
-
-            MessageBox.Show("Invoice No:" + InvNo.ToString() + "Saved successfuly");
-            invlist.Clear();
-            dataGridView1.Rows.Clear();
-        }
-
-        private void btnAdd_Click_1(object sender, EventArgs e)
-        {
-            if (int.Parse(txtQuantity.Text) <= int.Parse(lblStockleft.Text))
-            {
-                InvoiceAdd inv = new InvoiceAdd();
-                inv.Product_ID = Convert.ToInt32(cmbProductID.SelectedValue.ToString());
-                inv.Quantity = Convert.ToInt32(txtQuantity.Text);
-                inv.Update(inv);
-                DataBindToCombobox();
 
 
-                int row;
-                dataGridView1.Rows.Add();
-                row = dataGridView1.Rows.Count - 1;
-                dataGridView1[0, row].Value = int.Parse(cmbProductID.SelectedValue.ToString());
-                dataGridView1[1, row].Value = cmbProductID.Text;
-                dataGridView1[2, row].Value = Convert.ToInt32(txtPrice.Text);
-                dataGridView1[3, row].Value = Convert.ToDecimal(txtQuantity.Text);
-                dataGridView1[4, row].Value = Convert.ToDecimal(txtTotal.Text);
-            }
-            else
-            {
-                MessageBox.Show("Stock Out Of Bounce");
-            }
-        }
+        
+       
 
-        private void cmbProductID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQuantity_TextChanged_1(object sender, EventArgs e)
-        {
-            calculate();
-        }
+     
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -256,6 +222,68 @@ namespace ADPOS
 
         private void label4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cmbProductID_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            geProductDetails(cmbProductID.SelectedValue.ToString());
+
+            foreach (var item in Search)
+            {
+                txtPrice.Text = Convert.ToString(item.Price);
+                lblStockleft.Text = Convert.ToString(item.Quantity);
+            }
+            calculate();
+            Search.Clear();
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            
+            calculate();
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(txtQuantity.Text) <= int.Parse(lblStockleft.Text))
+            {
+
+                DataBindToCombobox();
+
+
+                int row;
+                DataGrid_temp_Purchase_order.Rows.Add();
+                row = DataGrid_temp_Purchase_order.Rows.Count - 1;
+                DataGrid_temp_Purchase_order[0, row].Value = int.Parse(cmbProductID.SelectedValue.ToString());
+                DataGrid_temp_Purchase_order[1, row].Value = cmbProductID.Text;
+                DataGrid_temp_Purchase_order[2, row].Value = Convert.ToInt32(txtPrice.Text);
+                DataGrid_temp_Purchase_order[3, row].Value = Convert.ToDecimal(txtQuantity.Text);
+                DataGrid_temp_Purchase_order[4, row].Value = Convert.ToDecimal(txtTotal.Text);
+            }
+            else
+            {
+                MessageBox.Show("Stock Out Of Bounce");
+            }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            LoginUser.IDGlobal = 2;
+
+            inv_master_Retail invm = new inv_master_Retail();
+            invm.InvDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            invm.Time = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
+            invm.UserID = LoginUser.IDGlobal;
+            invm.Supplier_ID = Convert.ToInt32(cmb_Supplier.SelectedValue.ToString());
+            
+
+            SaveMasterRec(invm);
+            int InvNo = CreateInvTransList();
+
+            MessageBox.Show("Invoice No:" + InvNo.ToString() + "Saved successfuly");
+            invlist.Clear();
+            DataGrid_temp_Purchase_order.Rows.Clear();
 
         }
     }
