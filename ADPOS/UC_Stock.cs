@@ -100,7 +100,35 @@ namespace ADPOS
             return true;
         }
 
-      
-     
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            if (DataValid())
+            {
+                Stock stk = new Stock();
+                stk.productID = Convert.ToInt32(txt_product_ID.Text);
+                stk.quantity = Convert.ToDecimal(txt_Quantity.Text);
+                stk.SaveProduct(stk);
+                DatabindtoProductGridView();
+            }
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            if (DataValid())
+            {
+                Stock stk = new Stock();
+                stk.productID = Convert.ToInt32(txt_product_ID.Text);
+                stk.quantity = Convert.ToDecimal(txt_Quantity.Text);
+                stk.UpdateProduct(stk);
+                DatabindtoProductGridView();
+            }
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txt_product_ID.Text = "";
+            txt_Quantity.Text = "";
+            txt_product_ID.Focus();
+        }
     }
 }
