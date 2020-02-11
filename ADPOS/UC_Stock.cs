@@ -14,7 +14,7 @@ namespace ADPOS
 {
     public partial class UC_Stock : UserControl
     {
-
+      
         public UC_Stock()
         {
             InitializeComponent();
@@ -27,20 +27,19 @@ namespace ADPOS
 
         }
 
-
+      
 
         public class Stock
         {
             public int productID { get; set; }
             public Decimal quantity { get; set; }
-            public int stockID { get; set; }
 
             public void SaveProduct(Stock stk)
             {
 
                 using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
                 {
-                    string sql = "INSERT INTO `tbl_stock`( `Product_ID`, `Quantity`) VALUES ('" + stk.productID + "','" + stk.quantity + "')";
+                    string sql = "INSERT INTO `tbl_stock`( `Product_ID`, `Quantity`) VALUES ('"+stk.productID+"','"+stk.quantity+"')";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -53,7 +52,7 @@ namespace ADPOS
             {
                 using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
                 {
-                    string sql = "UPDATE `tbl_stock` SET `Quantity`='" + stk.quantity + "'WHERE `Stock_ID`='"+stk.stockID+"'";
+                    string sql = "UPDATE `tbl_stock` SET `Quantity`='"+stk.quantity+ "'WHERE `Product_ID`='" + stk.productID + "'";
 
                     con.Open();
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -64,9 +63,9 @@ namespace ADPOS
 
             }
 
+            
 
-
-
+            
 
         }
         private void DatabindtoProductGridView()
@@ -100,6 +99,35 @@ namespace ADPOS
             return true;
         }
 
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            if (DataValid())
+            {
+                Stock stk = new Stock();
+                stk.productID = Convert.ToInt32(txt_product_ID.Text);
+                stk.quantity = Convert.ToDecimal(txt_Quantity.Text);
+                stk.SaveProduct(stk);
+                DatabindtoProductGridView();
+            }
+        }
 
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            if (DataValid())
+            {
+                Stock stk = new Stock();
+                stk.productID = Convert.ToInt32(txt_product_ID.Text);
+                stk.quantity = Convert.ToDecimal(txt_Quantity.Text);
+                stk.UpdateProduct(stk);
+                DatabindtoProductGridView();
+            }
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txt_product_ID.Text = "";
+            txt_Quantity.Text = "";
+            txt_product_ID.Focus();
+        }
     }
 }

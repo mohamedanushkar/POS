@@ -28,18 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.DataGrid_Product_Details = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.Btn_Update = new System.Windows.Forms.Button();
             this.txt_product_ID = new System.Windows.Forms.TextBox();
             this.txt_Quantity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.DataGrid_Product_Details = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
+            this.btn_add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Product_Details)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // DataGrid_Product_Details
+            // 
+            this.DataGrid_Product_Details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid_Product_Details.Location = new System.Drawing.Point(3, 202);
+            this.DataGrid_Product_Details.Name = "DataGrid_Product_Details";
+            this.DataGrid_Product_Details.Size = new System.Drawing.Size(943, 333);
+            this.DataGrid_Product_Details.TabIndex = 1;
+            this.DataGrid_Product_Details.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Stock_Details_CellContentClick);
             // 
             // groupBox1
             // 
@@ -53,19 +62,9 @@
             this.groupBox1.Location = new System.Drawing.Point(6, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(940, 193);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Stock";
-            // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(534, 102);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 23);
-            this.btn_add.TabIndex = 10;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Clear
             // 
@@ -119,13 +118,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Quantity";
             // 
-            // DataGrid_Product_Details
+            // btn_add
             // 
-            this.DataGrid_Product_Details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Product_Details.Location = new System.Drawing.Point(3, 202);
-            this.DataGrid_Product_Details.Name = "DataGrid_Product_Details";
-            this.DataGrid_Product_Details.Size = new System.Drawing.Size(943, 333);
-            this.DataGrid_Product_Details.TabIndex = 4;
+            this.btn_add.Location = new System.Drawing.Point(534, 102);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.TabIndex = 10;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // UC_Stock
             // 
@@ -135,23 +136,23 @@
             this.Controls.Add(this.DataGrid_Product_Details);
             this.Name = "UC_Stock";
             this.Size = new System.Drawing.Size(949, 538);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Product_Details)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Product_Details)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView DataGrid_Product_Details;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Button Btn_Update;
         private System.Windows.Forms.TextBox txt_product_ID;
         private System.Windows.Forms.TextBox txt_Quantity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView DataGrid_Product_Details;
+        private System.Windows.Forms.Button btn_add;
     }
 }
