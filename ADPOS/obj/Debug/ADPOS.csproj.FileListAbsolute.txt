@@ -107,7 +107,6 @@ D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\PO
 D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\stdole.dll
 D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.Invoice_WH.resources
 D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.UC_Report_Invoice.resources
 D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.INvoice_Retail.resources
 C:\Users\dumic\OneDrive\Desktop\New folder (3)\POS\ADPOS\bin\Debug\ADPOS.exe.config
@@ -156,3 +155,4 @@ C:\Users\dumic\OneDrive\Desktop\New folder (3)\POS\ADPOS\obj\Debug\ADPOS.csproj.
 C:\Users\dumic\OneDrive\Desktop\New folder (3)\POS\ADPOS\obj\Debug\ADPOS.csproj.CopyComplete
 C:\Users\dumic\OneDrive\Desktop\New folder (3)\POS\ADPOS\obj\Debug\ADPOS.exe
 C:\Users\dumic\OneDrive\Desktop\New folder (3)\POS\ADPOS\obj\Debug\ADPOS.pdb
+D:\Software Engineering\Course\TOP UP\Application Development\Applications C#\POS\ADPOS\obj\Debug\ADPOS.Report_Purchaisee_Order.resources
