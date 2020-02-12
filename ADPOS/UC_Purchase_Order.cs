@@ -286,5 +286,11 @@ namespace ADPOS
             DataGrid_temp_Purchase_order.Rows.Clear();
 
         }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            Report_Purchaisee_Order frm = new Report_Purchaisee_Order(Convert.ToInt32(txtID.Text));
+            frm.Show();
+        }
     }
 }

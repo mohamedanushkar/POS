@@ -239,6 +239,7 @@
             this.btn_Print.TabIndex = 11;
             this.btn_Print.Text = "Print";
             this.btn_Print.UseVisualStyleBackColor = true;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // DataGrid_temp_Purchase_order
             // 
@@ -253,7 +254,7 @@
             this.Quantity,
             this.Total});
             this.DataGrid_temp_Purchase_order.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DataGrid_temp_Purchase_order.Location = new System.Drawing.Point(363, 0);
+            this.DataGrid_temp_Purchase_order.Location = new System.Drawing.Point(397, 0);
             this.DataGrid_temp_Purchase_order.MultiSelect = false;
             this.DataGrid_temp_Purchase_order.Name = "DataGrid_temp_Purchase_order";
             this.DataGrid_temp_Purchase_order.ReadOnly = true;
@@ -301,7 +302,7 @@
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.groupBox1);
             this.Name = "UC_Purchase_Order";
-            this.Size = new System.Drawing.Size(949, 538);
+            this.Size = new System.Drawing.Size(983, 538);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_temp_Purchase_order)).EndInit();
