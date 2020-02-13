@@ -14,7 +14,7 @@ namespace ADPOS
 {
     public partial class UC_Stock : UserControl
     {
-      
+
         public UC_Stock()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace ADPOS
 
         }
 
-      
+
 
         public class Stock
         {
@@ -39,7 +39,7 @@ namespace ADPOS
 
                 using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
                 {
-                    string sql = "INSERT INTO `tbl_stock`( `Product_ID`, `Quantity`) VALUES ('"+stk.productID+"','"+stk.quantity+"')";
+                    string sql = "INSERT INTO `tbl_stock`( `Product_ID`, `Quantity`) VALUES ('" + stk.productID + "','" + stk.quantity + "')";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -52,7 +52,7 @@ namespace ADPOS
             {
                 using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
                 {
-                    string sql = "UPDATE `tbl_stock` SET `Quantity`='"+stk.quantity+ "'WHERE `Product_ID`='" + stk.productID + "'";
+                    string sql = "UPDATE `tbl_stock` SET `Quantity`='" + stk.quantity + "'WHERE `Product_ID`='" + stk.productID + "'";
 
                     con.Open();
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -63,9 +63,9 @@ namespace ADPOS
 
             }
 
-            
 
-            
+
+
 
         }
         private void DatabindtoProductGridView()
@@ -106,11 +106,41 @@ namespace ADPOS
                 Stock stk = new Stock();
                 stk.productID = Convert.ToInt32(txt_product_ID.Text);
                 stk.quantity = Convert.ToDecimal(txt_Quantity.Text);
-                stk.SaveProduct(stk);
-                DatabindtoProductGridView();
+
+
+
+
+                int count = returnRows(stk.productID);
+                if (count >= 1)
+                {
+                    if (DataValid())
+                    {
+                        stk.UpdateProduct(stk);
+                        DatabindtoProductGridView();
+                    }
+                }
+                else
+                {
+                    stk.SaveProduct(stk);
+                    DatabindtoProductGridView();
+                }
+
+
             }
         }
-
+        private int returnRows(int PID)
+        {
+            using (MySqlConnection con = new MySqlConnection(LoginUser.cs))
+            {
+                string sql = "SELECT COUNT(*) as cnt FROM `tbl_stock` WHERE tbl_stock.Product_ID = '" + PID + "';";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                con.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                int Count = Convert.ToInt32(dr["cnt"]);
+                return Count;
+            }
+        }
         private void Btn_Update_Click(object sender, EventArgs e)
         {
             if (DataValid())
